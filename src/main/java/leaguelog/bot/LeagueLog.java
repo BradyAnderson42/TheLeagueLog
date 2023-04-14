@@ -1,3 +1,5 @@
+package leaguelog.bot;
+
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.channel.Channel;
@@ -14,7 +16,7 @@ public class LeagueLog {
 
     public LeagueLog() {
         jda = JDABuilder.createDefault(TOKEN)
-                .addEventListeners(new MessageListener())
+                .addEventListeners(new leaguelog.bot.MessageListener())
                 .build();
         try {
             jda.awaitReady();
@@ -24,11 +26,10 @@ public class LeagueLog {
         Optional<TextChannel> leagueLogOptional = jda.getGuildsByName("Dylan", false).get(0).getTextChannels().stream().filter(textChannel -> textChannel.getName().equals("league-log")).findFirst();
         if (leagueLogOptional.isPresent()) {
             leagueLog = leagueLogOptional.get();
-        }
-        else {
+        } else {
             System.exit(-1);
         }
-        //leagueLog.sendMessage("Hello World!").queue();
+        leagueLog.sendMessage("Hello World!").queue();
     }
 
 }

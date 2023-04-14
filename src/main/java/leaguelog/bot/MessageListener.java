@@ -1,3 +1,5 @@
+package leaguelog.bot;
+
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.channel.ChannelType;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
@@ -6,8 +8,7 @@ import net.dv8tion.jda.api.requests.RestAction;
 
 public class MessageListener extends ListenerAdapter {
     @Override
-    public void onMessageReceived(MessageReceivedEvent event)
-    {
+    public void onMessageReceived(MessageReceivedEvent event) {
 //        System.out.println(event.getChannel().getName());
 //        if(notBot(event)) {
 //            RestAction<Message> action = event.getChannel().sendMessage("penis");
